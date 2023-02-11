@@ -1,1 +1,16 @@
+$enable-gradients: true;
 @import "bootstrap";
+
+html, body {
+    height: 100%;
+}
+
+.bg{
+    background-image: image_url("bg.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+main {
+    opacity: 0.65;
+}
