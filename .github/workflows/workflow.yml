@@ -1,0 +1,39 @@
+name: CI
+on: push
+jobs:
+  rubocop:
+    name: Rubocop
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Analyze code
+        run: bundle exec rubocop
+
+rubocop:
+  name: Rubocop
+  runs-on: ubuntu-latest # Informa o SO que será usado nos testes
+  steps:
+    # Pega o código do projeto
+    - name: Checkout code
+      uses: actions/checkout@v1
+
+    # Configura o Ruby e instala as dependências
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+        # Exemplo de outras configurações:
+        ruby-version: 2.7.5
+        bundler: 2.4.6
+        # working-directory: ./backend
+
+    # Executa o Rubocop
+    - name: Analyze code
+      run: bundle exec rubocop
