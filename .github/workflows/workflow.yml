@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.2
 
       - name: Setup Ruby
-        uses: actions/setup-ruby@v1
+        uses: actions/setup-ruby@v2
         with:
-          ruby-version: 2.7.5
+          ruby-version: 2.7
 
       - name: Install dependencies
         run: |
