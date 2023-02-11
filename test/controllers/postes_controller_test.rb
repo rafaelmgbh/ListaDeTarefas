@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class PostesControllerTest < ActionDispatch::IntegrationTest
@@ -5,17 +7,17 @@ class PostesControllerTest < ActionDispatch::IntegrationTest
     @poste = postes(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get postes_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_poste_url
     assert_response :success
   end
 
-  test "should create poste" do
+  test 'should create poste' do
     assert_difference('Poste.count') do
       post postes_url, params: { poste: { descricao: @poste.descricao, titulo: @poste.titulo } }
     end
@@ -23,22 +25,22 @@ class PostesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to poste_url(Poste.last)
   end
 
-  test "should show poste" do
+  test 'should show poste' do
     get poste_url(@poste)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_poste_url(@poste)
     assert_response :success
   end
 
-  test "should update poste" do
+  test 'should update poste' do
     patch poste_url(@poste), params: { poste: { descricao: @poste.descricao, titulo: @poste.titulo } }
     assert_redirected_to poste_url(@poste)
   end
 
-  test "should destroy poste" do
+  test 'should destroy poste' do
     assert_difference('Poste.count', -1) do
       delete poste_url(@poste)
     end
