@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      taks: 'Tarefa'
+
+    attributes:
+      task:
+        description: 'Descrição'
+        due_date: 'Prazo'
+        status: 'Finalizada?'
