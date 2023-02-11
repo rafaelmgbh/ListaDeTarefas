@@ -1,5 +1,13 @@
 {
   "name": "listaDeTarefas",
   "private": true,
-  "dependencies": {}
+  "devDependencies": {
+    "husky": "^8.0.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "rake test"
+    }
+  }
+
 }
