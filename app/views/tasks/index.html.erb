@@ -19,8 +19,10 @@
     </thead>
     <tbody>
       <% @tasks.each do |task| %>
-        <tr class='border-top'>
             <%= render 'table_row', task: task %>
+            <% task.sub_tasks.order(:due_date).each do |sub_task| %>
+              <%= render 'table_row', task: sub_task %>
+            <% end %>
 
         </tr>
       <% end %>
