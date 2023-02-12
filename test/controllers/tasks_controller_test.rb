@@ -46,6 +46,6 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
       delete task_url(@task)
     end
 
-    assert_redirected_to tasks_url
+    assert_redirected_to tasks_path
   end
 end
